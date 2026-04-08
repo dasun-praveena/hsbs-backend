@@ -8,7 +8,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = 'hsbs_secret_2024';
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000"
+  ]
+}));
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
 app.use(express.json());
 
 // ─── SRI LANKA CITIES ────────────────────────────────────────────────────────
